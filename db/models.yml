@@ -1,3 +1,7 @@
+Dice:
+    - side: integer
+    
+    
 # Example table for a typical Book model.
 #
 # Book:
