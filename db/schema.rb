@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140421220557) do
+ActiveRecord::Schema.define(version: 20140421222406) do
 
   create_table "dices", force: true do |t|
-    t.integer "side"
+    t.integer "side_one"
+    t.integer "side_two"
   end
 
 end
