@@ -1,1 +1,17 @@
-<h1>books</h1>
+<h1>Books</h1>
+
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Author</th>
+	</tr>
+		
+<% all_books = Book.read %>
+<% all_books.each do |title| %><% all_books.each do |author| %>
+<tr>
+	<td><%= title["title"] %></td> 
+	<td><%= author["author"] %></td>
+</tr>
+<% end %> <% end %>
+
+</table>
