@@ -2,6 +2,10 @@ Dice:
     - side_one: integer
     - side_two: integer
     
+Book:
+    - title: string
+    - author: string
+    
     
     
     
