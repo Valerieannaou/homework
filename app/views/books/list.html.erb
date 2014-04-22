@@ -1,3 +1,12 @@
+<!DOCTYPE>
+<html>
+<head>
+<style>
+table,th,td
+{border:1px solid black;}
+</style>
+</head>
+
 <h1>Books</h1>
 
 <table>
@@ -5,13 +14,13 @@
 		<th>Title</th>
 		<th>Author</th>
 	</tr>
-		
+<tr>		
 <% all_books = Book.read %>
-<% all_books.each do |title| %><% all_books.each do |author| %>
-<tr>
-	<td><%= title["title"] %></td> 
-	<td><%= author["author"] %></td>
+<% all_books.each do |title| %>
+	<td><%= title["title"] %></td> <td><%=title["author"] %></td>
+
 </tr>
-<% end %> <% end %>
+
+<% end %>
 
 </table>
