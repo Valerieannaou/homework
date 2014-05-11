@@ -1,0 +1,19 @@
+<h1> book detail page </h1>
+
+
+<% the_book_id = params["id"] %>
+
+<% book_id = params["the_book_id"] %>
+<% book = Book.read(the_book_id) %>
+
+<h2> <%= book["title"] %> ($<%= book["price"] %>) </h2>
+
+1 star: http://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/1_stars.svg/535px-1_stars.svg.png
+2 stars: http://upload.wikimedia.org/wikipedia/commons/thumb/8/88/2_stars.svg/535px-2_stars.svg.png
+
+3 stars: http://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/3_stars.svg/535px-3_stars.svg.png
+
+4 stars: http://upload.wikimedia.org/wikipedia/commons/1/1b/4_stars.svg
+
+5 stars: http://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/5_stars.svg/535px-5_stars.svg.png
+
