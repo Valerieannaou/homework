@@ -6,7 +6,7 @@ get "/books/list" => "books/list"
 
 #Homework 2
 
-get "/" => 'books/store'
+get "/" => "books#home"
 
 get "/books" => 'books/store'
 

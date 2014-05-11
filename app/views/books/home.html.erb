@@ -1,0 +1,12 @@
+<p>
+<%= link_to "Home", "/" %>   |  <%= link_to "Bookstore", "/books" %> 	  
+</p>
+
+<h1> Editor's Pick </h1>
+
+ <% game = Book.find_by("title" => "A Game of Thrones")%>
+<!-- <h2> <%= game["title"] %> </h2> -->
+
+<h2> <%= link_to "A Game of Thrones", "/books/48"%> </h2>
+
+<%= image_tag "http://1.bp.blogspot.com/--tYGxtHOMh0/TguFVraNlJI/AAAAAAAAETk/sJ1WtFjPLe4/s1600/A+GAME+OF+THRONES+new+HC.jpg", "width" => "200" %>

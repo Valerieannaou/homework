@@ -1,4 +1,9 @@
-<h1> book detail page </h1>
+
+<p>
+<%= link_to "Home", "/" %>   |  <%= link_to "Bookstore", "/books" %> 	  
+</p>
+
+<h1> Book Detail Page </h1>
 
 
 <% the_book_id = params["id"] %>
@@ -8,6 +13,11 @@
 
 <h2> <%= book["title"] %> ($<%= book["price"] %>) </h2>
 
+
+<% review = Review.read(the_book_id) %>
+
+<h2> <%= review["comment"]%> </h2>
+ 
 1 star: http://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/1_stars.svg/535px-1_stars.svg.png
 2 stars: http://upload.wikimedia.org/wikipedia/commons/thumb/8/88/2_stars.svg/535px-2_stars.svg.png
 
