@@ -13,13 +13,12 @@
 <% author = Author.find_by("id"=> book["author_id"]) %>
 <% review = Review.find_by("book_id" => book["book_id"]) %>
 
-<% book_rating = Review.where("book_id" => book["id"]) %>
 
    <li>
 <%= link_to (book["title"]), "/books/#{book["id"]}" %> 
 
 
-<%= Review.read("book_id").average("rating")%>
+<%= Review.where("book_id").average("rating").round(2) %>
 
   </li>
 <% end %>

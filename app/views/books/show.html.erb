@@ -11,6 +11,7 @@
 <% book_id = params["the_book_id"] %>
 <% book = Book.read(the_book_id) %>
 
+
 <h2> <%= book["title"] %> ($<%= book["price"] %>) </h2>
 
 
