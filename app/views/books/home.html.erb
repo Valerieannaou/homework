@@ -16,7 +16,7 @@
   
 <% average.each do |title| %>
 <% the_book = Book.find_by("id" => title["book_id"])%>
-<h2> <%= link_to the_book["title"], "books/64" %></h2>
+<h2> <%= link_to (the_book["title"]), "/books/#{the_book["id"]}" %></h2>
 
 
 
