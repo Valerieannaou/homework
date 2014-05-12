@@ -6,21 +6,14 @@
 
 <% all_books = Book.read %>
 
-<ul>
-	
-<% book_id = params["id"]%>
 <% all_books.each do |book| %>
-<% author = Author.find_by("id"=> book["author_id"]) %>
-<% review = Review.find_by("book_id" => book["book_id"]) %>
 
+<% avg = Review.where("book_id" => book["id"]).average("rating")%>
 
    <li>
 <%= link_to (book["title"]), "/books/#{book["id"]}" %> 
-
-
-<%= Review.where("book_id").average("rating").round(2) %>
+(<% if avg.blank? %> <i>Not yet rated </i><% else %> <%= avg.round(2) %> stars
+<% end %>) </h2>
 
   </li>
 <% end %>
-
-<%= image_tag("http://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/1_stars.svg/535px-1_stars.svg.png") %>

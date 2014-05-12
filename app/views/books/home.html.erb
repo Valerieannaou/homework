@@ -4,9 +4,16 @@
 
 <h1> Editor's Pick </h1>
 
- <% game = Book.find_by("title" => "A Game of Thrones")%>
-<!-- <h2> <%= game["title"] %> </h2> -->
+<% all_books = Book.read %>
 
-<h2> <%= link_to "A Game of Thrones", "/books/67"%> </h2>
+<% all_books.each do |book| %>
 
-<%= image_tag "http://1.bp.blogspot.com/--tYGxtHOMh0/TguFVraNlJI/AAAAAAAAETk/sJ1WtFjPLe4/s1600/A+GAME+OF+THRONES+new+HC.jpg", "width" => "200" %>
+<% avg = Review.read("book_id" => book["id"]).average("rating")%>
+
+<% edpick = Review.read("book_id" => book["id"]).order("title asc") %>
+
+
+ <li>
+<%= link_to (book["title"]), "/books/#{book["id"]}" %>  <%= edpick%>
+</li>
+<% end %>
